@@ -1,15 +1,15 @@
 let input;
-let cond;
-let list = [];
-let avg = 0;
-let max = 0;
+let condition;
+let numberList = [];
 let min = 0;
+let max = 0;
+let avg = 0;
 let total = 0;
 let count = 0;
 
 while (true) {
-  input = prompt("Please enter the number");
-  cond = input >= 0 ? readInput() : displayStats(list);
+  input = prompt("Please enter the number: ");
+  condition = input >= 0 ? readInput() : displayStats(numberList);
   if (count == 1) {
     console.log(count);
     break;
@@ -17,26 +17,26 @@ while (true) {
 }
 function readInput() {
   if (input > 0) {
-    list.push(input);
+    numberList.push(input);
   }
 }
 function displayStats(list) {
-  if (list.length > 1) {
-    list.sort(function (a, b) {
+  if (numberList.length > 1) {
+    numberList.sort(function (a, b) {
       return a - b;
     });
-    console.log(list);
-    for (i = 0; i < list.length; i++) {
-      total += Number(list[i]);
+    console.log(numberList);
+    for (i = 0; i < numberList.length; i++) {
+      total += Number(numberList[i]);
     }
     console.log(total, i);
-    avg = total / list.length;
-    max = Math.max(...list);
-    min = Math.min(...list);
+    avg = total / numberList.length;
+    max = Math.max(...numberList);
+    min = Math.min(...numberList);
   }
   alert(
     "For the list " +
-      list +
+      numberList +
       " ,the average is " +
       avg +
       ", the minimum is " +
