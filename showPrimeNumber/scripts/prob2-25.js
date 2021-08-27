@@ -1,5 +1,5 @@
 let input;
-let condition;
+let conditional;
 let numberList = [];
 let min = 0;
 let max = 0;
@@ -13,7 +13,7 @@ while (true) {
     // alert("Please enter only Number.");
     input = prompt("Enter an integer is negative integer to quit: ");
   } else {
-    condition = input >= 0 ? readInput() : displayStats(numberList);
+    conditional = input >= 0 ? readInput() : displayStats(numberList);
   }
   if (count == 1) {
     break;
