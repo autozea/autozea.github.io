@@ -8,19 +8,23 @@ let total = 0;
 let count = 0;
 
 while (true) {
-  input = prompt("Please enter the number: ");
-  condition = input >= 0 ? readInput() : displayStats(numberList);
+  input = prompt("Enter an integer is negative integer to quit: ");
+  if (isNaN(input)) {
+    // alert("Please enter only Number.");
+    input = prompt("Enter an integer is negative integer to quit: ");
+  } else {
+    condition = input >= 0 ? readInput() : displayStats(numberList);
+  }
   if (count == 1) {
-    console.log(count);
     break;
   }
 }
 function readInput() {
-  if (input > 0) {
+  if (input >= 0) {
     numberList.push(input);
   }
 }
-function displayStats(list) {
+function displayStats(numberList) {
   if (numberList.length > 1) {
     numberList.sort(function (a, b) {
       return a - b;
