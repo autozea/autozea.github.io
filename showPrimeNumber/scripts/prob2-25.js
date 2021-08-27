@@ -1,5 +1,5 @@
 let input;
-let conditional;
+let cond;
 let numberList = [];
 let min = 0;
 let max = 0;
@@ -10,10 +10,9 @@ let count = 0;
 while (true) {
   input = prompt("Enter an integer is negative integer to quit: ");
   if (isNaN(input)) {
-    // alert("Please enter only Number.");
-    input = prompt("Enter an integer is negative integer to quit: ");
+    console.log("Please enter only number");
   } else {
-    conditional = input >= 0 ? readInput() : displayStats(numberList);
+    cond = input >= 0 ? readInput() : displayStats(numberList);
   }
   if (count == 1) {
     break;
@@ -25,15 +24,13 @@ function readInput() {
   }
 }
 function displayStats(numberList) {
-  if (numberList.length > 1) {
+  if (numberList.length > 0) {
     numberList.sort(function (a, b) {
       return a - b;
     });
-    console.log(numberList);
     for (i = 0; i < numberList.length; i++) {
       total += Number(numberList[i]);
     }
-    console.log(total, i);
     avg = total / numberList.length;
     max = Math.max(...numberList);
     min = Math.min(...numberList);
